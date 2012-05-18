@@ -13,8 +13,10 @@ Gem::Specification.new do |s|
   s.summary     = "ActionController 1x1 transparent GIF pixel render function"
   s.description = "Blank pixel rendering for pixel tracking scripts"
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
-  s.test_files = Dir["test/**/*"]
+  #s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = `git ls-files`.split("\n")
+  #s.test_files = Dir["test/**/*"]
+  s.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
 
   s.add_dependency "rails", "~> 3.2.2"
 
